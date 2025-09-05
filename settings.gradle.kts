@@ -29,3 +29,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":packages:core")
+include(":packages:DashboardFeature")
