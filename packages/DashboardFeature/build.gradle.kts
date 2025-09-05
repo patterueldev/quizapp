@@ -1,12 +1,17 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import dev.whyoleg.sweetspi.gradle.*
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.sweetspi)
 }
 
 kotlin {
+    withSweetSpi()
+
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
