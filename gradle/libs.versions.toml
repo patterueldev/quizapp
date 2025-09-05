@@ -26,6 +26,7 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+sweetspi-runtime = { module = "dev.whyoleg.sweetspi:sweetspi-runtime", version.ref = "sweetspi" }
 sweetspi-processor = { module = "dev.whyoleg.sweetspi:sweetspi-processor", version.ref = "sweetspi" }
 
 [plugins]

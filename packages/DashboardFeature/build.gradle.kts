@@ -1,17 +1,13 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-import dev.whyoleg.sweetspi.gradle.*
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.sweetspi)
 }
 
 kotlin {
-    withSweetSpi()
-
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
@@ -30,11 +26,19 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.packages.core)
+            implementation(libs.sweetspi.runtime)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
         }
     }
+}
+
+dependencies {
+    add("kspAndroid", libs.sweetspi.processor)
+    add("kspIosArm64", libs.sweetspi.processor)
+    add("kspIosSimulatorArm64", libs.sweetspi.processor)
+    add("kspWasmJs", libs.sweetspi.processor)
 }
 
 android {
